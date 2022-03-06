@@ -9,11 +9,23 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
+    <style>
+      body {background-color: rgb(163, 163, 156);}
+      h1   {color: rgb(248, 248, 244);}
+      p    {color: rgb(38, 0, 255);}
+      h3   {color: rgb(168, 18, 18)}
+      a    {color: rgb(189, 188, 196)}
+      div  {color: rgb(9, 9, 10)}
+     </style> 
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8">
+        <div class="col-xs-6 col-md-4">
+      </div>
   </head>
   <body>
     <div class="container">
       <!-- Add Jumbotron to Header -->
-      <div class="jumbotron text-center">
+      <div class="jumbotron text-center" style="background-image: url(https://media.kidadl.com/Mars_1890e170a4.jpg);">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
         <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
@@ -44,31 +56,38 @@
             alt="Responsive image"
           />
         </div>
-
         <div class="col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
-            <h4>Mars Facts</h4>
+            <h4<strong>Mars Facts</strong></h4>
             {{ mars.facts | safe }}
           </div>
         </div>
       </div>
-
       <!-- Section for Mars Hemispheres -->
       <div class="row" id="mars-hemispheres">
         <div class="page-header">
           <h2 class="text-center">Mars Hemispheres</h2>
         </div>
-
         {% for hemisphere in mars.hemispheres %}
         <div class="col-md-6">
           <div class="thumbnail">
             <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
-            <div class="caption">
-              <h3>{{hemisphere.title}}</h3>
+              <div class="caption">
+                <h3>{{hemisphere.title}}</h3>
+                  <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                      <div class="col-xs-6 col-md-4">
+                        <div class="col-xs-4 col-md-2">
+                          <div class="col-xs-2 col-md-2">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
         {% endfor %}
       </div>
     </div>
